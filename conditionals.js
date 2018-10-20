@@ -6,7 +6,16 @@ const READLINE = require("readline-sync");
 // R-rated movie.
 console.log("*** Problem 1: R-rated ***");
 let age = READLINE.question("Enter your age: ");
-let withAdult = READLINE.question("Are you with an adult? (yes or no): ");
+if (age >= 18) {
+  console.log("You can see the R-rated movie!");
+} else if (age < 18) {
+    let withAdult = READLINE.question("Are you with an adult? (yes or no): ");
+    if (withAdult == 'yes') {
+        console.log("You can see the R-rated movie!");
+      }
+} else (age < 18 && withAdult == 'no') {
+    console.log("Unfortunately You Can Not Watch The R-rated movie.");
+}
 
 
 // **** Problem 2: Umbrella ****
